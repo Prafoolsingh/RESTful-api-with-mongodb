@@ -1,0 +1,5 @@
+In Postman, create a new request to access the protected /secret endpoint. Set the request type to GET and the URL to http://localhost:<your_port>/secret, where <your_port> is the port your server is running on. Include the JWT token in the request headers under the Authorization key. The header should look like Authorization: Bearer <your_jwt_token>.
+
+
+login krte time hme token generate krwaya usko copy kr k postman k header m de denge 
+

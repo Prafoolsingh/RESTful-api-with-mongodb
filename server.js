@@ -1,6 +1,8 @@
 // Importing the express module
 const express = require("express");
 
+const auth=require("./midlleware/middleware_auth")
+
 // Importing the user_router module
 const user_router = require("./routes/user_router");
 
@@ -27,6 +29,12 @@ app.use(cors());
 
 // Using the user_router for handling routes starting with "/api"
 app.use("/api", user_router);
+
+
+// this endpoint can be accessed by only genuine user beacuase we have used auth middleware which is check for genuine user if it is then middleware direct that user to this endpoint otherwise will not allow
+app.get("/secret",auth,(req,res)=>{
+res.send("now you can access me")
+})
 
 // Start the server and listen on the specified port
 app.listen(port, () => {

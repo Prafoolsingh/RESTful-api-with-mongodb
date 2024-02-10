@@ -79,7 +79,7 @@ const login = async (req, res) => {
             //  generating a json token for authentication
 
             const payload = {
-                userId: existingUser._id
+                _id: existingUser._id
             };
 
             const secretKey = process.env.SECRET_KEY
